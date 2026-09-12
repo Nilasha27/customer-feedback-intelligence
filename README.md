@@ -12,7 +12,6 @@ An AI-powered customer feedback analysis application built using LangChain and a
 - Pydantic structured output
 - LCEL-based pipeline
 - Runnable components
-- Batch processing
 
 ## Architecture
 
@@ -58,7 +57,7 @@ Feedback Analysis
 - RunnableParallel
 - LCEL
 - invoke()
-- batch()
+
 
 ## Future Enhancements
 
