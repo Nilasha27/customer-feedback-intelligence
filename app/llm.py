@@ -1,5 +1,4 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
-
 from app.config import GOOGLE_API_KEY
 from app.schemas import FeedbackAnalysis
 
