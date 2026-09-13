@@ -179,14 +179,14 @@ llm_enriched_feedback
 
 The next stage of the project will focus on moving from an **LLM-powered application** toward a more production-oriented **Customer Feedback Intelligence Platform**.
 
-### 📚 RAG
+#### 📚 RAG
 
 * [ ] Add knowledge base for product policies and FAQs
 * [ ] Implement Retrieval-Augmented Generation
 * [ ] Ground customer responses in approved business knowledge
 * [ ] Add metadata-aware retrieval
 
-### 🤖 Agentic AI
+#### 🤖 Agentic AI
 
 * [ ] Introduce tool calling
 * [ ] Build feedback-resolution agents
@@ -194,7 +194,7 @@ The next stage of the project will focus on moving from an **LLM-powered applica
 * [ ] Explore MCP-based tool integration
 * [ ] Add human-in-the-loop escalation
 
-### 📊 Business Intelligence
+#### 📊 Business Intelligence
 
 * [ ] Feedback trend analysis
 * [ ] Product-level issue identification
@@ -204,7 +204,7 @@ The next stage of the project will focus on moving from an **LLM-powered applica
 * [ ] Root-cause analysis
 * [ ] Business recommendation layer
 
-### 🧪 LLM Evaluation
+#### 🧪 LLM Evaluation
 
 * [ ] Build evaluation datasets
 * [ ] Measure classification accuracy
@@ -212,7 +212,7 @@ The next stage of the project will focus on moving from an **LLM-powered applica
 * [ ] Monitor hallucinations
 * [ ] Implement LLM evaluation framework
 
-### ☁️ Production & MLOps
+#### ☁️ Production & MLOps
 
 * [ ] Containerize application using Docker
 * [ ] Deploy on GCP
