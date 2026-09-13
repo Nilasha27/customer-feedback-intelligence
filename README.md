@@ -1,4 +1,4 @@
-## 💬Customer Feedback Intelligence Platform
+# Customer Feedback Intelligence Platform 💬
 
 > **Turning unstructured customer feedback into actionable intelligence and automated customer support workflows.**
 
@@ -156,7 +156,7 @@ The structured output makes the LLM response predictable and suitable for downst
 
 ---
 
-### Historical Feedback Processing Workflow
+### 🗂️ Historical Feedback Processing Workflow
 
 ```text
 Existing customer_feedback
