@@ -23,6 +23,7 @@ class FeedbackAnalysis(BaseModel):
         "payment",
         "technical",
         "fraud",
+        "fees/charges",
         "other"
     ] = Field(
         description="Primary category of the feedback."
@@ -53,7 +54,7 @@ class FeedbackAnalysis(BaseModel):
     
     customer_response: str = Field(
         description=(
-            "Appropriate response that can be sent directly to the customer"
+            "Appropriate concise response that can be sent directly to the customer"
         )
     )
 
