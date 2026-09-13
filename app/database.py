@@ -5,7 +5,6 @@ from pathlib import Path
 
 DB_PATH = Path("database/feedback.db")
 
-
 def get_connection():
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     return sqlite3.connect(DB_PATH)
@@ -16,8 +15,8 @@ def insert_customer_feedback(
     feedback_id,
     customer_name,
     feedback_text,
-    channel,
     product,
+    channel="App",
     source="Streamlit"
 ):
 
@@ -55,7 +54,7 @@ def insert_customer_feedback(
 
 def get_unprocessed_feedback(): 
     conn = get_connection() 
-    query = """ SELECT cf.feedback_id, cf.customer_name, cf.feedback_text, cf.feedback_date 
+    query = """ SELECT cf.feedback_id, cf.feedback_text
     FROM customer_feedback cf 
     LEFT JOIN llm_enriched_feedback ef 
     ON cf.feedback_id = ef.feedback_id 
@@ -73,6 +72,7 @@ def insert_llm_enrichment(
     priority,
     summary,
     recommended_action,
+    requires_support,
     support_ticket_number,
     customer_response
 ):
@@ -89,11 +89,12 @@ def insert_llm_enrichment(
             priority,
             summary,
             recommended_action,
+            requires_support,
             support_ticket_number,
             customer_response,
             processed_at
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (
         feedback_id,
         sentiment,
@@ -101,6 +102,7 @@ def insert_llm_enrichment(
         priority,
         summary,
         recommended_action,
+        requires_support,
         support_ticket_number,
         customer_response,
         datetime.now().isoformat()

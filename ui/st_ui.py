@@ -1,68 +1,90 @@
 import streamlit as st
-from app.main import analyze_feedback
-
-# st.title("Customer Feedback Intelligence")
-
-# feedback = st.text_area("Enter customer feedback")
-
-# if st.button("Analyze"):
-#     result = analyze_feedback(feedback)
-#     st.write(result)
-
-# import streamlit as st
-
-# from feedback_analyzer import analyze_feedback
+from app.feedback_process import process_customer_feedback
 
 
-st.set_page_config(
-    page_title="AI Customer Feedback Analyzer",
-    page_icon="💬",
-    layout="centered"
+st.title("Customer Feedback Intelligence")
+
+customer_name = st.text_input("Customer Name")
+
+
+product = st.selectbox(
+    "Product",
+    ["Credit Card", "Savings Account", "Personal Loan", "Mortgage", "Investment", "Insurance", "Other"]
 )
 
-st.title("💬 AI Customer Feedback Analyzer")
-st.write("Analyze customer feedback using an LLM.")
-
-st.divider()
-
-feedback = st.text_area(
-    "Enter customer feedback",
-    placeholder="Example: My credit card payment keeps getting declined even though I have sufficient balance.",
-    height=150
+feedback_text = st.text_area(
+    "Customer Feedback",
+    placeholder="Tell us about your experience..."
 )
 
-if st.button("Analyze Feedback", type="primary"):
 
-    if not feedback.strip():
-        st.warning("Please enter some feedback.")
+if st.button("Submit Feedback"):
+
+    if not customer_name.strip():
+        st.warning("Please enter customer name.")
+
+    elif not feedback_text.strip():
+        st.warning("Please enter customer feedback.")
 
     else:
-        with st.spinner("Analyzing feedback..."):
+
+        with st.spinner("Analyzing your feedback..."):
 
             try:
-                result = analyze_feedback(feedback)
 
-                st.divider()
-                st.subheader("Feedback Analysis")
+                result = process_customer_feedback(
+                    customer_name=customer_name,
+                    feedback_text=feedback_text,
+                    product=product
+                )
 
-                col1, col2 = st.columns(2)
+                st.success("Feedback submitted successfully!")
 
-                with col1:
-                    st.markdown("#### Sentiment")
-                    st.write(result.sentiment)
+                st.write(
+                    result["customer_response"]
+                )
 
-                with col2:
-                    st.markdown("#### Priority")
-                    st.write(result.priority)
+                if result["support_ticket_number"]:
 
-                st.markdown("#### Category")
-                st.write(result.category)
+                    st.info(
+                        f"Support ticket created: "
+                        f"{result['support_ticket_number']}"
+                    )
 
-                st.markdown("#### Summary")
-                st.write(result.summary)
+                with st.expander("Feedback Analysis"):
 
-                st.markdown("#### Recommended Action")
-                st.write(result.recommended_action)
+                    st.write(
+                        "**Feedback ID:**",
+                        result["feedback_id"]
+                    )
+
+                    st.write(
+                        "**Sentiment:**",
+                        result["sentiment"]
+                    )
+
+                    st.write(
+                        "**Category:**",
+                        result["category"]
+                    )
+
+                    st.write(
+                        "**Priority:**",
+                        result["priority"]
+                    )
+
+                    st.write(
+                        "**Summary:**",
+                        result["summary"]
+                    )
+
+                    st.write(
+                        "**Recommended Action:**",
+                        result["recommended_action"]
+                    )
 
             except Exception as e:
-                st.error(f"Error analyzing feedback: {e}")
+
+                st.error(
+                    f"Unable to process feedback: {str(e)}"
+                )

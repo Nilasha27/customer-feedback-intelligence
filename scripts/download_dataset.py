@@ -77,7 +77,7 @@ def main() -> None:
     parser.add_argument(
         "--sample-size",
         type=int,
-        default=1000,
+        default=50,
         help="Number of reviews to download.",
     )
 

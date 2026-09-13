@@ -40,8 +40,8 @@ def create_database():
 
     print(f"Total records found in CSV: {len(df)}")
 
-    # Use only first 1000 records
-    df = df.head(1000).copy()
+    # Use only first 100 records
+    df = df.head(100).copy()
 
     print(f"Loading {len(df)} records into database...")
 
@@ -133,7 +133,7 @@ def create_database():
     # -----------------------------------------------------
 
     cursor.execute("""
-        CREATE TABLE customer_feedback (
+        CREATE TABLE IF NOT EXISTS customer_feedback (
 
             feedback_id TEXT PRIMARY KEY,
 
@@ -159,7 +159,7 @@ def create_database():
     # -----------------------------------------------------
 
     cursor.execute("""
-        CREATE TABLE llm_enriched_feedback (
+        CREATE TABLE IF NOT EXISTS llm_enriched_feedback (
 
             feedback_id TEXT PRIMARY KEY,
 
@@ -172,6 +172,8 @@ def create_database():
             summary TEXT,
 
             recommended_action TEXT,
+
+            requires_support BOOLEAN,
 
             support_ticket_number TEXT,
 
