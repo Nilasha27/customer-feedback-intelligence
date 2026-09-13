@@ -1,4 +1,4 @@
-# Customer Feedback Intelligence Platform 💬
+# Customer Feedback Intelligence Platform
 
 > **Turning unstructured customer feedback into actionable intelligence and automated customer support workflows.**
 
