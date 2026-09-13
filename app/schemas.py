@@ -16,15 +16,16 @@ class FeedbackAnalysis(BaseModel):
     )
 
     category: Literal[
-        "product",
-        "delivery",
-        "customer_service",
-        "pricing",
-        "payment",
-        "technical",
-        "fraud",
-        "fees/charges",
-        "other"
+        "Product & Features",
+        "Onboarding & Account Management",
+        "Delivery",
+        "Customer Service",
+        "Payments, Transfers & Cash",
+        "Technical & Digital Banking",
+        "Fraud & Security",
+        "Fees, Pricing & Rewards",
+        "Financial Advice & Planning",
+        "General & Others"
     ] = Field(
         description="Primary category of the feedback."
     )

@@ -12,13 +12,13 @@ def get_connection():
 
 def get_count(): 
     conn = get_connection() 
-    query = """ SELECT * FROM customer_feedback""" 
+    query = """ SELECT category, count(*) as c FROM llm_enriched_feedback group by category order by c desc """ 
     rows = conn.execute(query).fetchall() 
     conn.close() 
     return rows
 
 rows = get_count()
-
-print(
-        f"Feedback records: {len(rows)}"
-    )
+print(rows)
+# print(
+#         f"Feedback records: {len(rows)}"
+#     )

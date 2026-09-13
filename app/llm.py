@@ -4,7 +4,7 @@ from app.schemas import FeedbackAnalysis
 
 
 model = ChatGoogleGenerativeAI(
-    model="gemini-3.6-flash",
+    model="gemini-3.5-flash",
     temperature=0,
     api_key=GOOGLE_API_KEY,
 )

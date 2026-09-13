@@ -9,7 +9,8 @@ customer_name = st.text_input("Customer Name")
 
 product = st.selectbox(
     "Product",
-    ["Credit Card", "Savings Account", "Personal Loan", "Mortgage", "Investment", "Insurance", "Other"]
+    ["Credit Card", "Deposits", "Payments & Transfers", "Loans", "ATM & Cash Services", "Foreign Exchange",
+     "Wealth Management", "Mobile / Internet Banking", "General & Others"]
 )
 
 feedback_text = st.text_area(
