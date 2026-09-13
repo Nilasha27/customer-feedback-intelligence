@@ -1,4 +1,4 @@
-# Customer Feedback Intelligence Platform
+## 💬Customer Feedback Intelligence Platform
 
 > **Turning unstructured customer feedback into actionable intelligence and automated customer support workflows.**
 
@@ -6,7 +6,9 @@ An **LLM-powered customer feedback intelligence platform** that analyzes unstruc
 
 The platform is designed with a **banking/retail customer experience use case** in mind, where feedback needs to be converted into structured intelligence for both **customer service teams and business stakeholders**.
 
-## 🚀 What It Does
+---
+
+### 🚀 What It Does
 
 * 💬 Captures customer feedback through a **Streamlit application**
 * 🧠 Uses **LangChain + LLMs** pipeline to analyze feedback
@@ -16,35 +18,36 @@ The platform is designed with a **banking/retail customer experience use case** 
 * 💾 Stores raw and LLM-enriched feedback in **SQLite**
 * ⚡ Supports **batch processing of historical feedback**
 
+---
 
-## 🛠️ Technology Stack
+### 🛠️ Technology Stack
 
-### Application
+#### Application
 
 * Python
 * Streamlit
 
-### LLM / AI
+#### LLM / AI
 
 * LangChain
 * Large Language Models(Gemini)
 * Structured LLM outputs
 * Prompt engineering
 
-### Database
+#### Database
 
 * SQLite
 
-### Development
+#### Development
 
 * VS Code
 * Git
 * GitHub
 * Python virtual environment
 
+---
 
-
-## 🏗️ Architecture
+### 🏗️ Architecture
 
 ```text
                     ┌─────────────────────┐
@@ -99,7 +102,9 @@ The platform is designed with a **banking/retail customer experience use case** 
                                   │ intelligence        │
                                   └─────────────────────┘
 ```
-## 🔄 Current Workflow
+---
+
+### 🔄 Current Workflow
 
 When a customer submits feedback:
 
@@ -129,7 +134,7 @@ When a customer submits feedback:
 
 ---
 
-# 🧠 LLM Processing Pipeline
+### 🧠 LLM Processing Pipeline
 
 The feedback analysis pipeline is built using **LangChain**.
 
@@ -151,7 +156,7 @@ The structured output makes the LLM response predictable and suitable for downst
 
 ---
 
-## Historical Feedback Processing Workflow
+### Historical Feedback Processing Workflow
 
 ```text
 Existing customer_feedback
@@ -168,9 +173,9 @@ Generate support ticket where required
           ↓
 llm_enriched_feedback
 ```
+---
 
-
-# 🔮 Planned Enhancements
+### 🎯 Planned Enhancements
 
 The next stage of the project will focus on moving from an **LLM-powered application** toward a more production-oriented **Customer Feedback Intelligence Platform**.
 
@@ -219,7 +224,7 @@ The next stage of the project will focus on moving from an **LLM-powered applica
 
 ---
 
-# 💼 Business Value
+### 💼 Business Value
 
 The platform can help organizations move from:
 
@@ -246,6 +251,7 @@ Human Escalation When Required
         ↓
 Business Insights
 ```
+---
 
 > 🚧 **Project Status:** Actively under development — evolving from an LLM-powered feedback analysis application toward a production-oriented AI customer intelligence platform.
 
