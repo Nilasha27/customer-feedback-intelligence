@@ -7,10 +7,10 @@ class FeedbackAnalysis(BaseModel):
     """Structured output for customer feedback analysis."""
 
     sentiment: Literal[
-        "positive",
-        "negative",
-        "neutral",
-        "mixed"
+        "Positive",
+        "Negative",
+        "Neutral",
+        "Mixed"
     ] = Field(
         description="Overall sentiment of the customer feedback."
     )
@@ -22,16 +22,17 @@ class FeedbackAnalysis(BaseModel):
         "pricing",
         "payment",
         "technical",
+        "fraud",
         "other"
     ] = Field(
         description="Primary category of the feedback."
     )
 
     priority: Literal[
-        "low",
-        "medium",
-        "high",
-        "critical"
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
     ] = Field(
         description="Priority level based on customer impact."
     )
@@ -43,3 +44,16 @@ class FeedbackAnalysis(BaseModel):
     recommended_action: str = Field(
         description="Recommended action for the company."
     )
+
+    requires_support: bool = Field(
+            description=(
+                "True if the issue requires human/support team intervention"
+            )
+        )
+    
+    customer_response: str = Field(
+        description=(
+            "Appropriate response that can be sent directly to the customer"
+        )
+    )
+

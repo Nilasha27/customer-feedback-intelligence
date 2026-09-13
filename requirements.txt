@@ -24,9 +24,17 @@ python-dotenv
 # Machine Learning Utilities
 numpy
 scikit-learn
+pandas
 
 #Structured Data Handling
 pydantic
 
 #UI
 streamlit
+
+#Dataset
+datasets
+
+#Testing
+pytest
+

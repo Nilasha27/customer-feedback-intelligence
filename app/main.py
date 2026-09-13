@@ -54,6 +54,8 @@ def main():
         f"Recommended Action : "
         f"{result.recommended_action}"
     )
+    print(f"Requires Support   : {result.requires_support}")
+    print(f"Customer Response  : {result.customer_response}")
 
 
 if __name__ == "__main__":
